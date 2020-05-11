@@ -32,11 +32,11 @@ app = Flask(__name__)
 @app.route('/')
 def welcome():
     return(
-    """Welcome to the Climate Analysis API!\n
-    Available Routes:\n
-    api/v1.0/precipitation\n
-    api/v1.0/stations\n
-    api/v1.0/tobs\n
+    """Welcome to the Climate Analysis API! <br>
+    Available Routes: <br>
+    api/v1.0/precipitation <br>
+    api/v1.0/stations <br>
+    api/v1.0/tobs <br>
     api/v1.0/temp/start/end
     """)
 
@@ -91,3 +91,5 @@ def stats(start=None, end=None):
     temps = list(np.ravel(results))
     return jsonify(temps)
 
+if __name__ == ‘__main__‘:
+    app.run(debug=True)
